@@ -1,0 +1,221 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.wrapper{
+    height: 100vh;
+    overflow-x: hidden;
+    /* overflow-y: auto; */
+    width: 100vw;
+    perspective: 10px;
+}
+
+.container{
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    z-index: -1;
+}
+
+.background{
+    transform: translateZ(-20px) scale(4);
+    /* transform: translateZ(-39px) scale(5); */
+}
+
+.foreground{
+    transform: translateZ(-20px) scale(3); 
+}
+
+.background, .foreground{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+
+h1{
+    top: 5rem;
+    position: absolute;
+    font-size:10rem;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+    letter-spacing: 4px;
+    font-weight: 700;
+
+}
+
+.text{
+    padding: 0 10rem;
+    font-size: 1.5rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    margin: 5rem 0;
+}
+
+section{
+    color: white;
+    background-color: rgb(45,45,45);
+    padding: 5rem 0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 100;
+
+}
+
+.secHeading{
+    font-size: 5rem;
+    padding: 0 10rem;
+    
+}
+
+.bg{
+    position: relative;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 500px;
+    box-sizing: border-box;
+
+}
+
+.bg1{
+    background-image: url(sport-1.jpg);
+}
+
+.bg2{
+    background-image: url(sport-2.jpg);
+}
+
+.bg3{
+    background-image: url(sport-3.jpg);
+}
+
+.desc{
+    font-size: 3.5rem;
+    color: black;
+    font-weight: 600;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: white;
+    padding: 0.5rem 2.5rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.last{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%)
+}
+
+.footer-links{
+    position: absolute;
+    left: 50%;
+    /* bottom: 50%; */
+    transform: translateY(120%) translateX(-40%);
+}
+
+.image{
+    height: 20px;
+    width: 20px;
+    border-radius: 60%;
+    left: 50%;
+    margin-right: 20px;
+}
+
+
+/* Media query for mobile and smaller screens */
+@media (max-width: 768px) {
+    
+    .container {
+        text-align: center;
+    }
+
+    .container img {
+        width: 100%;
+        height: auto;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    h2.secHeading, .desc {
+        /* width: 100vw; */
+        font-size: 2em;
+    }
+
+    .text, .text p {
+        font-size: 1em;
+        padding: 5px;
+        text-align: justify;
+    }
+
+    .bg {
+        margin: 20px 0;
+    }
+
+    .last {
+        font-size: 0.9em;
+        margin-top: 20px;
+    }
+
+    .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .footer-links .footer-link img {
+        width: 30px;
+        height: 30px;
+    }    
+
+    .mainheading {
+        font-size: 4rem;
+        color: #B9D9EB;
+    }
+
+    .foreground {
+        position: relative;
+        top: 120px;
+    }
+
+    h2.secHeading {
+        font-size: 2rem;
+    }
+
+    
+}
+
+
+
+
+/* perspective ON - eyes and image ke beech m distance, jitni dedo koi dikkat ni */
+/* x-axis m scroll ho rha h par hume toh x axis m scroll ni chahiye toh overflow-x hidden and y m overflow auto, jitan required hoga ho jayega */
+/* jis bhi container m 3d wla kaam karege usme transfrom style 3d preserve, nhi kiya toh 2d plane m chipak jayegi */
+/* z-index overlapping ke liye hota h konsi layer kiske upr aane wali hai */
+/* container isliye use kiya kyuki flex bnana tha, parent box toh chahiye na */
+/* object-fit: cover; is a CSS property that is used to control how an image or video should be resized to fit within its container while maintaining its aspect ratio */
+/* jab bhi website bnao toh universal selector m margin padding box 0 and sizing border box 0kardo  */
+/* poori wrapper ki width viewport ke equal honi chahiye 100vh */
+/* ab isme z axis m kaam karna hai, ek image eyes ke pass and ek durr, so perspective ON */
+/* align items items ko cross axis m align, align content cross axis m spaces ke liye */
+/* adhi image half m aadhi dusre half m kyuki flex m by defauly main axis se stack hoge */
+/* object fit property is used to specify how an image or video should be resized to fit its container */
+/* z-index ki need hi ni koi */
+/* perspective km hi rakho, 3d styling ke liye lena hi padega and phir jiske andar 3d chahiye h usme preserve-3d and ab jo elements ya image h usko z axis m aage peeche kardo jiss se ki scrolling ke time difference aaye time ka, */
+/* top |left right| bottom -- padding */
+/* background attachement, image fix baaki cheeze uske upr scroll karte rahegi  */
+/* background-image cover viewport ki height width cover karelgi and centre m image ka centre centre m hoga */
+/* jab jab overlap karwana ho tab tab position absolute kardo jo upr chahte ho */
+
